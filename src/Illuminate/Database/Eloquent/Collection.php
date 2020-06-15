@@ -163,7 +163,7 @@ class Collection extends BaseCollection implements QueueableCollection
 
         $models = $models->pluck($name);
 
-        if ($models->first() instanceof BaseCollection) {
+        if ($models->filter()->first() instanceof BaseCollection) {
             $models = $models->collapse();
         }
 
